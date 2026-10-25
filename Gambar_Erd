@@ -1,0 +1,5 @@
+mkdir Gambar_ERD
+touch Gambar_ERD/.gitkeep
+git add Gambar_ERD/.gitkeep
+git commit -m "Tambah folder kosong"
+git push
