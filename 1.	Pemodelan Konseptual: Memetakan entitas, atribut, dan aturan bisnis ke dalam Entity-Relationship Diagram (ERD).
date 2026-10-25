@@ -1,0 +1,50 @@
+1. Daftar Entitas dan Atribut Utama
+•	PENGGUNA
+Atribut: id_pengguna (Primary Key), nama, status_verifikasi.
+
+•	AKUN
+Atribut: id_akun (Primary Key), jenis_akun, status_akun.
+
+•	TRANSAKSI (Supertype)
+Atribut: id_transaksi (Primary Key), tanggal, jam, nominal, kanal_transaksi, status_transaksi, waktu_transaksi.
+
+o	Spesialisasi (Subtype Pembayaran):
+
+	TRANSAKSI_KARTU_KREDIT (Atribut: negara_transaksi)
+	TRANSAKSI_TRANSFER_BANK (Atribut: kode_bank_tujuan)
+	TRANSAKSI_E_WALLET (Atribut: metode_pembayaran)
+
+•	FITUR_TRASAKSI
+Atribut: nama_fitur, nilai_fitur.
+
+•	DATA SET
+Atribut: id_dataset, nama_dataset, sumber_data, format_data.
+
+•	MODEL_DETEKSI
+Atribut: id_model, nama_algoritma, pendekatan, mode_pemrosesan.
+
+•	HASIL_EVALUASI
+Atribut: nama_parameter, nilai_parameter.
+
+•	PERINGATAN_FRAUD
+Atribut: id_peringatan, waktu_deteksi, skor_fraud, status_peringatan, jenis_pola_fraud, jumlah_transaksi_terkait.
+
+•	ANALISIS_FRAUD
+Atribut: id_penulis, nama_penulis.
+
+2. Aturan Bisnis & Hubungan Antar Entitas (Business Rules & Relationships)
+•	Relasi Pengguna & Akun (memegang): 
+Seorang pengguna terdaftar dapat memegang satu atau beberapa akun perbankan/dompet digital.
+
+•	Relasi Akun & Transaksi (mengirim & menerima):
+ Suatu akun dapat melakukan pengiriman dana maupun menerima dana dalam aktivitas transaksi keuangan.
+
+•	Pola Supertype/Subtype Transaksi: Entitas utama TRANSAKSI dikelompokkan ke dalam beberapa kanal pembayaran spesifik (Kartu Kredit, Transfer Bank, dan E-Wallet) untuk mengakomodasi atribut tambahan yang berbeda di setiap metode pembayaran.
+
+•	Relasi Analitik & Machine Learning:
+Data transaksi dihubungkan dengan DATA SET yang kemudian digunakan oleh MODEL_DETEKSI untuk menghasilkan keluaran berupa PERINGATAN_FRAUD.
+
+o	MODEL_DETEKSI juga dievaluasi melalui HASIL_EVALUASI.
+Setiap PERINGATAN_FRAUD yang muncul akan ditinjau kembali (meninjau) melalui laporan ANALISIS_FRAUD oleh pihak yang berwenang.
+
+
