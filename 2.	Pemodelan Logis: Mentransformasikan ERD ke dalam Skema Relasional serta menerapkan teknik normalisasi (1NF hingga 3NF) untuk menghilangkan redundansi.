@@ -2,5 +2,4 @@
 Pemodelan logis mengubah ERD (model konseptual) menjadi skema relasional yang siap dipetakan ke basis data fisik (MySQL), lalu menerapkan normalisasi untuk menghilangkan redundansi. ERD kelompok memuat 9 entitas (termasuk 2 entitas lemah) dan 3 subtipe transaksi beserta relasinya.
 
 Gambar 1. ERD Kelompok 4: Deteksi Fraud pada Transaksi Keuangan
-<img src="1B_264311040_UTS---SCPMK0320703/assets
-/Gambar_ERD.jpeg" alt="Description" style="object-fit:cover" width="300px" height="300px">
+Transformasi ERD ke skema relasional menghasilkan total 16 tabel yang disusun berdasarkan aturan konversi untuk entitas kuat dan lemah, atribut komposit, multivalued, serta turunan, serta berbagai bentuk relasi seperti 1:N dan M:N, yang kemudian diuji dan disempurnakan melalui tahapan normalisasi mulai dari Bentuk Normal Pertama (1NF) dengan memisahkan atribut komposit dan multivalued serta menghilangkan atribut turunan, Bentuk Normal Kedua (2NF) untuk memastikan ketiadaan ketergantungan parsial pada kunci gabungan, hingga Bentuk Normal Ketiga (3NF) guna menghindari ketergantungan transitif, sehingga menghasilkan skema basis data yang konsisten, terstruktur optimal, dan bebas anomali yang juga didukung oleh catatan asumsi terkait kardi
