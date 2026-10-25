@@ -1,0 +1,3 @@
+1. Pemodelan Logis: Dasar ERD
+Pemodelan logis mengubah ERD (model konseptual) menjadi skema relasional yang siap dipetakan ke basis data fisik (MySQL), lalu menerapkan normalisasi untuk menghilangkan redundansi. ERD kelompok memuat 9 entitas (termasuk 2 entitas lemah) dan 3 subtipe transaksi beserta relasinya.
+Gambar 1. ERD Kelompok 4: Deteksi Fraud pada Transaksi Keuangan
